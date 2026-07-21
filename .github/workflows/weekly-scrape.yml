@@ -1,0 +1,35 @@
+name: Weekly Competitor Intelligence Scrape
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+jobs:
+  scrape-and-analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: |
+          pip install -r requirements.txt
+          mkdir -p data reports
+          python scripts/scraper.py
+      - env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/change_detector.py
+          python scripts/synthesize.py
+      - run: |
+          git config user.name "Compete Bot"
+          git config user.email "bot@compete.local"
+          git add data/ reports/
+          git commit -m "Weekly update - $(date +%Y-%m-%d)" || true
+          git push
+      - uses: actions/upload-artifact@v3
+        with:
+          name: intelligence-report
+          path: data/powerbi_feed.csv
+          retention-days: 30
