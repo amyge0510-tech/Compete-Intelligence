@@ -1,0 +1,89 @@
+{
+  "competitors": [
+    {
+      "name": "AWS",
+      "domain": "skillbuilder.aws",
+      "base_url": "https://skillbuilder.aws/",
+      "paths": [
+        "/learning-paths",
+        "/courses",
+        "/blog",
+        "/news",
+        "/en/learning-paths",
+        "/en/courses"
+      ],
+      "search_patterns": ["blog", "news", "announcement", "release", "course", "learning-path"],
+      "rss_urls": []
+    },
+    {
+      "name": "Salesforce",
+      "domain": "trailhead.salesforce.com",
+      "base_url": "https://trailhead.salesforce.com/",
+      "paths": [
+        "/trails",
+        "/modules",
+        "/en/trails",
+        "/en/modules",
+        "/blog"
+      ],
+      "search_patterns": ["trail", "module", "blog", "news", "learning"],
+      "rss_urls": []
+    },
+    {
+      "name": "Google",
+      "domain": "skills.google",
+      "base_url": "https://www.skills.google/",
+      "paths": [
+        "/courses",
+        "/learning-paths",
+        "/blog",
+        "/en/courses",
+        "/en/learning-paths"
+      ],
+      "search_patterns": ["course", "path", "blog", "news", "learning"],
+      "rss_urls": []
+    },
+    {
+      "name": "Anthropic",
+      "domain": "anthropic.com",
+      "base_url": "https://www.anthropic.com/",
+      "paths": [
+        "/learn",
+        "/research",
+        "/blog",
+        "/news",
+        "/resources"
+      ],
+      "search_patterns": ["learn", "course", "tutorial", "blog", "news", "research"],
+      "rss_urls": []
+    },
+    {
+      "name": "OpenAI",
+      "domain": "openai.com",
+      "base_url": "https://academy.openai.com/",
+      "paths": [
+        "/courses",
+        "/learning",
+        "/resources",
+        "/blog",
+        "/en/courses"
+      ],
+      "search_patterns": ["course", "learning", "blog", "news", "resource"],
+      "rss_urls": []
+    },
+    {
+      "name": "Coursera",
+      "domain": "coursera.org",
+      "base_url": "https://www.coursera.org/",
+      "paths": [
+        "/courses",
+        "/specializations",
+        "/degrees",
+        "/blog",
+        "/en/courses"
+      ],
+      "search_patterns": ["course", "specialization", "degree", "blog", "news"],
+      "rss_urls": ["https://blog.coursera.org/feed/"]
+    }
+  ]
+}
